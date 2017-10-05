@@ -1,0 +1,36 @@
+<div class="customer-list mat-elevation-z8">
+
+  <md-table class="mat-table" [dataSource]="customerList">
+
+    <ng-container mdColumnDef="actions">
+      <md-header-cell class="mat-header-cell" *mdHeaderCellDef></md-header-cell>
+      <md-cell *mdCellDef="let customer">
+        <a [routerLink]="['edit', customer.cprCvr]" md-button>Edit</a>
+      </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="lastName">
+      <md-header-cell class="mat-header-cell" *mdHeaderCellDef>Last Name</md-header-cell>
+      <md-cell *mdCellDef="let customer"> {{customer.lastName}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="firstName">
+      <md-header-cell class="mat-header-cell" *mdHeaderCellDef>First Name</md-header-cell>
+      <md-cell *mdCellDef="let customer"> {{customer.firstName}} </md-cell>
+    </ng-container>
+
+    <ng-container mdColumnDef="cprCvr">
+      <md-header-cell class="mat-header-cell" *mdHeaderCellDef>Cvr</md-header-cell>
+      <md-cell *mdCellDef="let customer"> {{customer.cprCvr}} </md-cell>
+    </ng-container>
+
+    <md-header-row class="mat-header-row" *mdHeaderRowDef="customerListColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: customerListColumns;"></md-row>
+
+  </md-table>
+
+</div>
+
+<button md-fab class="customer-list__add-button" [routerLink]="['new']">
+  <md-icon>add</md-icon>
+</button>

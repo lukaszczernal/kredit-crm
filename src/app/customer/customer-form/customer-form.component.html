@@ -1,0 +1,23 @@
+<div class="customer-form">
+  <md-card class="customer-form">
+
+    <form ngForm="customerForm" class="example-form" #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)">
+      <md-form-field class="customer-form__field">
+        <input mdInput placeholder="Cvr" name="cprCvr" [ngModel]="(customerData | async)?.cprCvr" required>
+      </md-form-field>
+      <md-form-field class="customer-form__field">
+        <input mdInput placeholder="First Name" name="firstName" [ngModel]="(customerData | async)?.firstName">
+      </md-form-field>
+      <md-form-field class="customer-form__field">
+        <input mdInput placeholder="Last Name" name="lastName" [ngModel]="(customerData | async)?.lastName">
+      </md-form-field>
+
+      <div class="customer-form__field">
+        <a md-button (click)="goToCustomerList()">Cancel</a>
+        <button type="submit" md-button>Save</button>
+      </div>
+
+    </form>
+
+  </md-card>
+</div>
