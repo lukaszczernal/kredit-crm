@@ -39,7 +39,6 @@ export class CustomerService {
             .map(customer => items => {
                 const toBeUpdated = items.find((item: Customer) => item.cprCvr === customer.cprCvr);
                 if (toBeUpdated) {
-                    console.log('test', toBeUpdated);
                     Object.assign(toBeUpdated, customer);
                 }
                 return items;
